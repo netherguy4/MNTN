@@ -44,6 +44,9 @@ input,
 button,
 textarea {
   font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
   background: transparent;
 }
 
@@ -63,6 +66,7 @@ button::-moz-focus-inner {
 a,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -88,3 +92,52 @@ h6 {
 }
 
 /*--------------------*/
+
+@font-face {
+  font-family: "Gilroy";
+  src:
+    local("Gilroy Bold"),
+    local("Gilroy-Bold"),
+    url("/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src:
+    local("Gilroy Medium"),
+    local("Gilroy-Medium"),
+    url("/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src:
+    local("Gilroy Extrabold"),
+    local("Gilroy-Extrabold"),
+    url("/fonts/Gilroy-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("/fonts/ChronicleDisplay-Semi.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("/fonts/ChronicleDisplay-Black.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

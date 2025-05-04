@@ -81,27 +81,6 @@ export default defineNuxtConfig({
 
   css: ["/css/nullstyle.css", "/css/base.scss", "/css/utils.scss"],
 
-  image: {
-    quality: 75,
-  },
-
-  imports: {
-    presets: [
-      {
-        from: "gsap",
-        imports: ["gsap"],
-      },
-      // {
-      //   from: "gsap/ScrollToPlugin",
-      //   imports: ["ScrollToPlugin"],
-      // },
-      // {
-      //   from: "gsap/ScrollTrigger",
-      //   imports: ["ScrollTrigger"],
-      // },
-    ],
-  },
-
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -157,5 +136,6 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@nuxt/image",
     "@nuxt/fonts",
+    "nuxt-svgo",
   ],
 });
