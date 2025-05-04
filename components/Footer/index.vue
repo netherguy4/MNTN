@@ -23,9 +23,7 @@
         </ul>
       </div>
       <div class="footer__content">
-        <div class="footer__heading"
-          ><nuxt-link to="/">More on MNTN</nuxt-link></div
-        >
+        <div class="footer__heading">More on MNTN</div>
         <ul class="footer__list">
           <li class="footer__li"><nuxt-link to="/">The Team</nuxt-link></li>
           <li class="footer__li"><nuxt-link to="/">Jobs</nuxt-link></li>

@@ -21,9 +21,13 @@
     &__container {
       position: relative;
       z-index: 1;
-      padding-top: tovw(290, 1920);
+      padding: tovw(290, 1920) 20px 0;
       max-width: 950px;
       margin: 0 auto;
+      @media (min-width: $M) {
+        padding: tovw(290, 1920) 50px 0;
+        max-width: 1050px;
+      }
     }
     &__title {
       visibility: hidden;
@@ -32,15 +36,19 @@
       letter-spacing: 6px;
       text-transform: uppercase;
       color: var(--Accent, #fbd784);
-      margin-bottom: 32px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
+      @media (min-width: $M) {
+        margin-bottom: 32px;
+      }
       &::before {
         content: "";
         font-size: var(--width, 0);
         width: 1em;
         margin-right: em(32, 72);
-        border-bottom: var(--Accent, #fbd784) solid 2px;
+        border-bottom: var(--Accent, #fbd784) solid 1px;
+        border-top: var(--Accent, #fbd784) solid 1px;
       }
     }
     &__subtitle {
@@ -49,7 +57,11 @@
       font-size: 88px;
       line-height: 113%;
       text-transform: capitalize;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
+      @include adaptiv-font(88, 30);
+      @media (min-width: $M) {
+        margin-bottom: 32px;
+      }
     }
     &__hint {
       visibility: hidden;

@@ -1,7 +1,10 @@
 .container {
   max-width: 1920px;
-  padding: 0 50px;
+  padding: 0 20px;
   margin: 0 auto;
+  @media (min-width: $M) {
+    padding: 0 50px;
+  }
   @media (min-width: $XL) {
     padding: 0 230px;
   }

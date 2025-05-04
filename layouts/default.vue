@@ -1,7 +1,7 @@
 <template>
   <div id="smooth-wrapper">
     <div class="wrapper" id="smooth-content">
-      <Header class="wrapper__header" data-lag="1" />
+      <Header class="wrapper__header" />
       <slot />
     </div>
   </div>

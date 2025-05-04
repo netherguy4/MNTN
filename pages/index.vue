@@ -1,12 +1,16 @@
 <template>
   <Main class="main">
     <MainHero class="main__hero" />
+    <MainContent class="main__content" />
   </Main>
 </template>
 
 <style lang="scss" scoped>
   .main {
     flex: 1;
+    &__content {
+      margin: -400px 0 0;
+    }
   }
 </style>
 
