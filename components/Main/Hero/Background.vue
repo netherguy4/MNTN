@@ -52,20 +52,14 @@
 
 <style lang="scss" scoped>
   .bg {
-    overflow: hidden;
     pointer-events: none;
+    overflow: hidden;
     &__image {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      // &.--hg {
-      //   top: 50%;
-      // }
-      // &.--mg {
-      // }
       &.--lg {
         z-index: 1;
       }
@@ -79,7 +73,7 @@
       );
     }
     &__gradient--bottom {
-      inset: initial;
+      inset: unset;
       bottom: 0px;
       left: 0;
       right: 0;
@@ -89,7 +83,7 @@
         rgba(11, 29, 38, 0) 0%,
         #0b1d26 61.38%
       );
-      z-index: 1;
+      z-index: 2;
     }
   }
 </style>

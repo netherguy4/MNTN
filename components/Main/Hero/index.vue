@@ -78,7 +78,6 @@
 
 <style lang="scss" scoped>
   .hero {
-    will-change: transform;
     aspect-ratio: 1;
     font-size: 18px;
     position: relative;
