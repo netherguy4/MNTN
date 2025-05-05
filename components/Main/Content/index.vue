@@ -43,8 +43,6 @@
     position: relative;
     z-index: 2;
     font-size: 18px;
-    // &__container {
-    // }
     &__card {
       margin-bottom: 200px;
     }

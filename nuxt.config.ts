@@ -129,13 +129,5 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    "@vueuse/nuxt",
-    "@nuxt/icon",
-    "@nuxt/eslint",
-    "@nuxtjs/seo",
-    "@nuxt/image",
-    "@nuxt/fonts",
-    "nuxt-svgo",
-  ],
+  modules: ["@vueuse/nuxt", "@nuxt/icon", "@nuxt/eslint", "@nuxtjs/seo", "@nuxt/image", "nuxt-svgo"],
 });

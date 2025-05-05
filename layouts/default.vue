@@ -12,12 +12,5 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    &__header {
-      position: absolute;
-      z-index: 10;
-      top: 65px;
-      left: 0;
-      right: 0;
-    }
   }
 </style>

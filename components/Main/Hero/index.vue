@@ -13,8 +13,72 @@
   </section>
 </template>
 
+<script setup>
+  import { gsap } from "gsap";
+
+  const bgLoaded = useState("bgLoaded");
+  const init = () => {
+    const tl = gsap.timeline();
+    tl.to(".hero__background", { autoAlpha: 1 })
+      .fromTo(
+        ".hero__subtitle",
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+        }
+      )
+      .to(".hero__title", {
+        autoAlpha: 1,
+      })
+      .fromTo(
+        ".hero__title",
+        {
+          "--width": 0,
+        },
+        {
+          "--width": "72px",
+          ease: "back",
+        },
+        "-=0.4"
+      )
+      .fromTo(
+        ".hero__hint",
+        {
+          y: 50,
+        },
+        {
+          y: 0,
+          autoAlpha: 1,
+        },
+        "-=0.2"
+      )
+      .fromTo(
+        ".hero__hint-arrow",
+        {
+          y: -5,
+        },
+        { y: 10, repeat: -1, yoyo: true, duration: 0.7 },
+        "<"
+      );
+  };
+
+  watch(
+    bgLoaded,
+    (arr) => {
+      if (arr.length >= 3) {
+        init();
+      }
+    },
+    { deep: true }
+  );
+</script>
+
 <style lang="scss" scoped>
   .hero {
+    will-change: transform;
     aspect-ratio: 1;
     font-size: 18px;
     position: relative;
@@ -80,66 +144,3 @@
     }
   }
 </style>
-
-<script setup>
-  import { gsap } from "gsap";
-
-  const bgLoaded = useState("bgLoaded");
-  const init = () => {
-    const tl = gsap.timeline();
-    tl.to(".hero__background", { autoAlpha: 1 })
-      .fromTo(
-        ".hero__subtitle",
-        {
-          y: 100,
-        },
-        {
-          y: 0,
-          autoAlpha: 1,
-        }
-      )
-      .to(".hero__title", {
-        autoAlpha: 1,
-      })
-      .fromTo(
-        ".hero__title",
-        {
-          "--width": 0,
-        },
-        {
-          "--width": "72px",
-          ease: "back",
-        },
-        "-=0.4"
-      )
-      .fromTo(
-        ".hero__hint",
-        {
-          y: 50,
-        },
-        {
-          y: 0,
-          autoAlpha: 1,
-        },
-        "-=0.2"
-      )
-      .fromTo(
-        ".hero__hint-arrow",
-        {
-          y: -5,
-        },
-        { y: 10, repeat: -1, yoyo: true, duration: 0.7 },
-        "<"
-      );
-  };
-
-  watch(
-    bgLoaded,
-    (arr) => {
-      if (arr.length >= 3) {
-        init();
-      }
-    },
-    { deep: true }
-  );
-</script>

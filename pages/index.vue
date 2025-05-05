@@ -16,17 +16,46 @@
 
 <script setup>
   import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { ScrollSmoother } from "gsap/ScrollSmoother";
+  import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 
   definePageMeta({ layout: "custom" });
 
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  onMounted(() => {
-    ScrollSmoother.create({
+
+  const ScrollSmootherInstance = useState("ssinstance", () => undefined);
+  const ScrollTriggerInstances = useState("stinstances", () => new Array());
+
+  const init = () => {
+    ScrollSmootherInstance.value = ScrollSmoother.create({
       smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
       effects: true, // looks for data-speed and data-lag attributes on elements
-      smoothTouch: 0.1, // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
     });
-  });
+
+    const target = document.querySelectorAll(".card");
+    target.forEach((el, index) => {
+      const id = `card${index + 1}`;
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: el,
+            id: id,
+            scrub: 1,
+            start: "+=200 bottom",
+            end: "90% bottom",
+          },
+        })
+        .fromTo(el, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1 });
+      ScrollTriggerInstances.value.push(ScrollTrigger.getById(id));
+    });
+  };
+  const destroy = () => {
+    ScrollSmootherInstance.value ? ScrollSmootherInstance.value.kill() : "";
+    ScrollTriggerInstances.value.length > 0
+      ? ScrollTriggerInstances.value.forEach((trigger) => trigger.kill())
+      : "";
+    ScrollTriggerInstances.value = new Array();
+  };
+
+  onMounted(() => nextTick(init()));
+  onBeforeUnmount(destroy);
 </script>

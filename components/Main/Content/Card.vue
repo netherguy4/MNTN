@@ -128,6 +128,7 @@
     }
     &__image-wrapper {
       position: relative;
+      overflow: hidden;
       padding-bottom: percent(720, 566);
     }
     &__image {
