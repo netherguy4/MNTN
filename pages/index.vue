@@ -10,6 +10,13 @@
     flex: 1;
     &__content {
       margin: -400px 0 0;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        rgba(11, 29, 38, 0) 0%,
+        #0b1d26 9.38%
+      );
     }
   }
 </style>
