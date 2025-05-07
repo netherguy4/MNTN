@@ -3,9 +3,10 @@
     <div class="bg">
       <NuxtImg
         src="/img/hero/hg.png"
+        width="3840"
+        height="3840"
         sizes="300px xs:400px sm:700px md:900px lg:1280px xl:1440px xxl:1920px"
         format="avif,webp"
-        loading="eager"
         preload
         class="bg__image --hg"
         aria-hidden
@@ -15,11 +16,10 @@
       />
       <NuxtImg
         src="/img/hero/mg.png"
-        width="1920"
-        height="1920"
+        width="3840"
+        height="3840"
         sizes="300px xs:400px sm:700px md:900px lg:1280px xl:1440px xxl:1920px"
         format="avif,webp"
-        loading="eager"
         preload
         class="bg__image --mg"
         aria-hidden
@@ -29,11 +29,10 @@
       />
       <NuxtImg
         src="/img/hero/lg.png"
-        width="1920"
-        height="1920"
+        width="3840"
+        height="3840"
         sizes="300px xs:400px sm:700px md:900px lg:1280px xl:1440px xxl:1920px"
         format="avif,webp"
-        loading="eager"
         preload
         class="bg__image --lg"
         aria-hidden

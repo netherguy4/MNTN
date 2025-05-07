@@ -18,7 +18,7 @@
         height="720"
         width="566"
         format="avif"
-        loading="lazy"
+        :placeholder="20"
         class="card__image"
       />
     </div>
